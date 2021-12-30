@@ -17,7 +17,7 @@ contract AbachiRedemption is Ownable {
     IERC20 public ABI;
     bool public paused = false;
 
-    event Swap(address _recipient, uint256 _amount);
+    event Swap(address _sender, address _recipient, uint256 _amount);
 
 
     /**
@@ -84,6 +84,6 @@ contract AbachiRedemption is Ownable {
         );
 
         require(ABI.transfer(_recipient, _amount), "Failed to transfer ABI");
-        emit Swap(_recipient, _amount);
+        emit Swap(msg.sender, _recipient, _amount);
     }
 }
