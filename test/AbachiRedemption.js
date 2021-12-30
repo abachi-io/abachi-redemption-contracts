@@ -120,6 +120,13 @@ describe("Bridge", () => {
       expect(await ABI.balanceOf(nonaABIHolder.address)).to.eq(BigInt(1000 * 1e9));
     });
 
+    it("should fail when not enough abi in contract", async () => {
+      await ABI.burn(ABIBridge.address, await ABI.balanceOf(ABIBridge.address));
+
+      await aABI.connect(aABIHolder).approve(ABIBridge.address, await aABI.balanceOf(aABIHolder.address));
+      await expect(ABIBridge.connect(aABIHolder).swap()).to.be.rejectedWith("transfer amount exceeds balance");
+    });
+
   });
 
 });
