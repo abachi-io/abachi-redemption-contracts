@@ -19,7 +19,7 @@ Open a terminal and run the following git command:
 
 
 ```
-git clone git@github.com:abachi-io/abachi-presale-contracts.git
+git clone git@github.com:abachi-io/abachi-redemption-contracts.git
 ```
 
 ## Create a branch
@@ -27,7 +27,7 @@ git clone git@github.com:abachi-io/abachi-presale-contracts.git
 Change to the repository directory on your computer (if you are not already there):
 
 ```
-cd abachi-presale-contracts
+cd abachi-redemption-contracts
 ```
 
 Now create a branch using the `git checkout` command:
